@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jn4avarro.github.io/portafolio/sitemap-index.xml
