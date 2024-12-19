@@ -6,4 +6,7 @@ export default defineConfig({
   integrations: [tailwind(), robotsTxt()],
   site: 'https://jn4avarro.github.io',
   base: '/portafolio',
+  build: {
+    outDir: './dist' 
+  }
 })
