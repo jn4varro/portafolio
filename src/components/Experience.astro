@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Septiembre 2024 - Diciembre 2024",
+    title: "Prácticas en Desarrollo Web",
+    company: "BRGI",
+    description:
+      "Realicé prácticas en entorno profesional, utilizando tecnologías como PHP (Symfony), JavaScript, MySQL y Git. Participé en la creación de nuevas funcionalidades, resolución de bugs e incidencias en producción. Gestión de proyectos utilizando metodologías ágiles (Scrum), con herramientas como Jira y GitHub para el seguimiento y control de tareas.",
+  },
+  {
+    date: "Agosto 2024 - Septiembre 2024",
+    title: "Desarrollo Web Freelance",
+    company: "Regalos Nicolás y Ana",
+    description:
+      "Desarrollé un sistema TPV sencillo para un pequeño comercio, que permite gestionar ventas de productos de forma eficiente, usando tecnologías como HTML, CSS, JavaScript, PHP y MySQL.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

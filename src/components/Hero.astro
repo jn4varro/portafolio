@@ -1,0 +1,24 @@
+---
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import SocialPill from "../components/SocialPill.astro"
+---
+
+<div class="max-w-xl mx-auto text-center">
+  <h1 class="text-5xl font-bold tracking-tight text-gray-800 sm:text-8xl dark:text-white">
+    $javierNavarro
+  </h1>
+  <p class="mt-6 sm:text-[0.9rem] text-[0.7rem] sm:ml-12 text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300 sm:tracking-[0.6rem] tracking-[0.2rem] whitespace-nowrap">
+    DESARROLLADOR <strong>FULL-STACK</strong> JUNIOR
+  </p>
+  <nav class="flex flex-wrap justify-center gap-4 mt-8">
+    <SocialPill href="mailto:jnavarro.artist@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://linkedin.com/in/javier-navarro-robles-9561aa208">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>
