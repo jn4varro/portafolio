@@ -1,27 +1,26 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
-const base = import.meta.env.BASE_URL;
 
 const navItems = [
   {
     title: "Experiencia",
     label: "experiencia",
-    url:  `${base}#experiencia`,
+    url:  "/portafolio#experiencia",
   },
   {
     title: "Proyectos",
     label: "proyectos",
-    url: `${base}#proyectos`,
+    url: "/portafolio#proyectos",
   },
   {
     title: "Sobre mí",
     label: "sobre-mi",
-    url: `${base}#sobre-mi`,
+    url: "/portafolio#sobre-mi",
   },
   {
     title: "Contacto",
     label: "contacto",
-    url: `${base}#contacto`,
+    url: "/portafolio#contacto",
   },
 ]
 ---
@@ -57,9 +56,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
+              item.classList.add("text-yellow-200")
             } else {
-              item.classList.remove("text-blue-500")
+              item.classList.remove("text-yellow-200")
             }
           })
         }
