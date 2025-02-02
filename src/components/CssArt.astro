@@ -1,0 +1,109 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const CSSART = [
+  {
+    title: "Brawl Stars Logo",
+    description: "Recreación del emblemático logotipo de Brawl Stars utilizando únicamente HTML y CSS puro. Este proyecto demuestra el poder del CSS moderno para crear gráficos vectoriales complejos sin el uso de imágenes. La implementación incluye detalles como las características sombras y gradientes del logo original, manteniendo la esencia del diseño mientras explora las capacidades artísticas del CSS.",
+    link: "https://github.com/jn4varro/brawl_stars_logo", 
+    image: "/portafolio/BrawlStars (1).png", 
+  },
+  {
+    title: "The Holly Pig",
+    description: "Diseño original de un personaje llamado The Holly Pig, creado exclusivamente con HTML y CSS. Esta creación demuestra la versatilidad del CSS como herramienta artística, utilizando técnicas avanzadas de estilizado para dar forma y personalidad a un personaje único. El diseño incorpora detalles cuidadosamente elaborados y una paleta de colores distintiva, todo ello logrado sin el uso de imágenes externas.",
+    link: "https://github.com/jn4varro/theHollyPig", 
+    image: "/portafolio/theHolly.png", 
+  },
+  {
+    title: "Kirby",
+    description: 
+    "Interpretación del adorable personaje Kirby creada enteramente con CSS. Esta pieza captura la forma característica redonda y la expresión carismática del icónico héroe de Nintendo. El proyecto demuestra el uso avanzado de border-radius y transformaciones CSS para lograr las curvas suaves y la expresividad típica de Kirby.",
+    link: "https://github.com/jn4varro/kirby", 
+    image: "/portafolio/kirby (2).png", 
+  },
+]
+---
+
+<div class="relative max-w-xl mx-auto">
+  <div class="overflow-hidden">
+    <div class="flex transition-transform duration-500" id="slider" data-total-slides={CSSART.length}>
+      {CSSART.map(({ image, title, description, link }) => (
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="relative group">
+            <img 
+              class="w-full h-50 object-cover rounded-xl" 
+              src={image} 
+              alt={title} 
+            />
+            <div class="mt-4">
+              <h3 class="text-2xl font-bold text-yellow-200">{title}</h3>
+              <p class="mt-2 text-gray-400">{description}</p>
+              {link && (
+                <footer class="mt-4">
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Ver en GitHub
+                  </LinkButton>
+                </footer>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button 
+    id="prevBtn"
+    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white w-10 h-10 rounded-full flex items-center justify-center"
+    aria-label="Anterior"
+  >
+    ←
+  </button>
+  
+  <button 
+    id="nextBtn"
+    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white w-10 h-10 rounded-full flex items-center justify-center"
+    aria-label="Siguiente"
+  >
+    →
+  </button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slider = document.getElementById("slider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const totalSlides = Number(slider?.dataset.totalSlides || 0);
+
+  function updateSlider() {
+    if (slider) {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  }
+
+  // Event listeners
+  prevBtn?.addEventListener("click", prevSlide);
+  nextBtn?.addEventListener("click", nextSlide);
+
+  // Autoplay
+  const autoplayInterval = setInterval(nextSlide, 3000);
+
+  // Detener autoplay cuando el usuario interactúa
+  [prevBtn, nextBtn].forEach(btn => {
+    btn?.addEventListener("mouseenter", () => clearInterval(autoplayInterval));
+  });
+</script>

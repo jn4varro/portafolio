@@ -1,0 +1,62 @@
+---
+const tecnologias = [
+  { nombre: 'React', icono: 'fab fa-react' },
+  { nombre: 'JavaScript', icono: 'fab fa-js-square' },
+  { nombre: 'CSS', icono: 'fab fa-css3-alt' },
+  { nombre: 'HTML', icono: 'fab fa-html5' },
+  { nombre: 'PHP', icono: 'fab fa-php' },
+  { nombre: 'Java', icono: 'fab fa-java' },
+  { nombre: 'MySQL', icono: 'fas fa-database' },
+  { nombre: 'GitHub', icono: 'fab fa-github' },
+  { nombre: 'Figma', icono: 'fab fa-figma' }
+];
+---
+
+<section class="stack-tecnologias">
+  <div class="iconos-stack">
+    {tecnologias.map((tecnologia) => (
+      <div class="icono-tecnologia" data-key={tecnologia.nombre}>
+        <i class={tecnologia.icono}></i>
+
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stack-tecnologias {
+    text-align: center;
+  }
+
+  .iconos-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .icono-tecnologia {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .icono-tecnologia:hover {
+    transform: scale(1.1);
+    background-color: #fef08a;
+  }
+
+  .icono-tecnologia i {
+    font-size: 40px;
+    color: #333;
+  }
+
+  .icono-tecnologia p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+</style>

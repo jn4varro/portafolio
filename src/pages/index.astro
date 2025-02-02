@@ -9,6 +9,8 @@ import Projects from "../components/Projects.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
 import TitleSection from "../components/TitleSection.astro"
+import StackTecnologias from '../components/stackTecnologias.astro';
+import CssArt from '../components/cssArt.astro';
 ---
 
 <Layout title="Portafolio de Javier Navarro - Desarrollador Web Junior"
@@ -34,6 +36,22 @@ import TitleSection from "../components/TitleSection.astro"
 				Proyectos
 			  </TitleSection>
 			  <Projects />
+			</SectionContainer>
+
+			<SectionContainer id="cssArt">
+				<TitleSection>
+					<i class="fas fa-palette" style="color: rgb(255, 255, 255); margin-right: 8px;"></i>
+					Css Art
+				</TitleSection>
+				<CssArt />
+			</SectionContainer>
+
+			<SectionContainer id="tecnologias">
+				<TitleSection>
+					<i class="fas fa-lightbulb" style="color: rgb(255, 255, 255); margin-right: 8px;"></i>
+					Stack Tecnológico
+				</TitleSection>
+				<StackTecnologias />
 			</SectionContainer>
 		
 			<SectionContainer id="sobre-mi">
