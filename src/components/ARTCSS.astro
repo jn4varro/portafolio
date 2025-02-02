@@ -1,9 +1,17 @@
 ---
-import GitHub from "./icons/GitHub.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
-const CSSART = [
+// Definición de tipos para los objetos ARTCSS
+interface ArtCSSItem {
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+}
+
+// Datos de los proyectos en un arreglo
+const ARTCSS: ArtCSSItem[] = [
   {
     title: "Brawl Stars Logo",
     description: "Recreación del emblemático logotipo de Brawl Stars utilizando únicamente HTML y CSS puro. Este proyecto demuestra el poder del CSS moderno para crear gráficos vectoriales complejos sin el uso de imágenes. La implementación incluye detalles como las características sombras y gradientes del logo original, manteniendo la esencia del diseño mientras explora las capacidades artísticas del CSS.",
@@ -18,8 +26,7 @@ const CSSART = [
   },
   {
     title: "Kirby",
-    description: 
-    "Interpretación del adorable personaje Kirby creada enteramente con CSS. Esta pieza captura la forma característica redonda y la expresión carismática del icónico héroe de Nintendo. El proyecto demuestra el uso avanzado de border-radius y transformaciones CSS para lograr las curvas suaves y la expresividad típica de Kirby.",
+    description: "Interpretación del adorable personaje Kirby creada enteramente con CSS. Esta pieza captura la forma característica redonda y la expresión carismática del icónico héroe de Nintendo. El proyecto demuestra el uso avanzado de border-radius y transformaciones CSS para lograr las curvas suaves y la expresividad típica de Kirby.",
     link: "https://github.com/jn4varro/kirby", 
     image: "/portafolio/kirby (2).png", 
   },
@@ -28,8 +35,8 @@ const CSSART = [
 
 <div class="relative max-w-xl mx-auto">
   <div class="overflow-hidden">
-    <div class="flex transition-transform duration-500" id="slider" data-total-slides={CSSART.length}>
-      {CSSART.map(({ image, title, description, link }) => (
+    <div class="flex transition-transform duration-500" id="slider" data-total-slides={ARTCSS.length}>
+      {ARTCSS.map(({ image, title, description, link }) => (
         <div class="w-full flex-shrink-0 px-4">
           <div class="relative group">
             <img 
