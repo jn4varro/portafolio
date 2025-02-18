@@ -5,10 +5,18 @@ import LinkButton from "./LinkButton.astro"
 
 
 const PROJECTS = [
-  {
-    title: "Regalos Nicolás y Ana",
+{
+    title: "Generador de paletas de colores tupaletta.com",
     description:
-      "Proyecto Real construido sin frameworks. Es un TPV sencillo que permite gestionar ventas, registrando cantidades, precios y categorías de productos. Todo queda almacenado en una base de datos que facilita consultar ventas específicas o buscar por categoría y fecha de forma eficiente. Ademas, se puede imprimir un ticket con la venta realizada.",
+      "Herramienta para diseñadores y desarrolladores web que necesitan inspiración para sus proyectos. Tupaletta es un generador de paletas de colores a partir de una imagen. Los usuarios pueden subir una imagen y la aplicación extraerá los colores más representativos de la imagen, generando una paleta de colores que puede ser exportada. Este proyecto lo he desarrollado únicamente con React.",
+    link: "https://www.tupaletta.com",
+    image: "/portafolio/tupaletta.webp",
+  },
+
+  {
+    title: "TPV Comercio local",
+    description:
+      "Proyecto Real construido sin frameworks. Es un TPV sencillo que permite gestionar ventas, registrando cantidades, precios y categorías de productos. Todo queda almacenado en una base de datos que facilita consultar ventas específicas o buscar por categoría y fecha de forma eficiente. Ademas, se puede imprimir un ticket con la venta realizada. Este proyecto lo he desarrollado con HTML, CSS, JavaScript, PHP y MySQL.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7239656676788719616/",
     github: "https://github.com/jn4varro/small-business-tpv",
     image: "/portafolio/tpv.PNG",
@@ -16,16 +24,9 @@ const PROJECTS = [
   {
     title: "BeatPad App musical",
     description:
-      "BeatPad es una aplicación web interactiva que permite a los usuarios reproducir música utilizando un pad musical de percusión. Los usuarios pueden interactuar con los botones del pad, que están vinculados a sonidos predefinidos, todo en tiempo real y con baja latencia. El diseño de la aplicación está optimizado para ser responsivo, garantizando una experiencia fluida tanto en dispositivos móviles como de escritorio.",
+      "BeatPad es una aplicación web interactiva que permite a los usuarios reproducir música utilizando un pad musical de percusión. Los usuarios pueden interactuar con los botones del pad, que están vinculados a sonidos predefinidos, todo en tiempo real y con baja latencia. El diseño de la aplicación está optimizado para ser responsivo, garantizando una experiencia fluida tanto en dispositivos móviles como de escritorio. Este proyecto lo he desarrollado con React.",
     link: "https://beatpad.netlify.app",
     image: "/portafolio/movil.PNG",
-  },
-  {
-    title: "Juego de Snake en Python",
-    description:
-      "Versión clásica del juego Snake utilizando la biblioteca Turtle de Python. El juego cuenta con una interfaz gráfica sencilla, donde el jugador controla una serpiente que crece al comer comida, mientras evita colisionar con los bordes y consigo misma. Implementé la lógica de movimiento, detección de colisiones y crecimiento de la serpiente, logrando un juego interactivo y entretenido.",
-    github: "https://github.com/jn4varro/SnakeGame",
-    image: "/portafolio/snake.PNG",
   },
 ]
 ---
@@ -36,7 +37,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} alt={title} />
+     <img class="w-full aspect-[4/3] object-cover transition duration-500 md:group-hover:scale-105"src={image} alt={title} />
     </div>
   </div>
 
